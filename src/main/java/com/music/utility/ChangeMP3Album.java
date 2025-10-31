@@ -77,7 +77,8 @@ public class ChangeMP3Album {
 				File[] files = folder.listFiles();
 				if (files != null) {
 					for (File mp3File : files) {
-						if (mp3File.getName().toLowerCase().endsWith(".mp3")) {
+						if (mp3File.getName().toLowerCase().endsWith(".mp3")
+								|| mp3File.getName().toLowerCase().endsWith(".mp4")) {
 							try {
 								String name = mp3File.getName();
 								name = name.replace("＂", "");
@@ -85,7 +86,7 @@ public class ChangeMP3Album {
 								name = name.replace("(Official Video)", "");
 								name = name.replace("(Official Music Video)", "");
 								String newFileName = name.split("\\[")[0];
-								newFileName = newFileName.trim();
+								newFileName = newFileName.trim().split(" ｜ ")[0];
 								System.out.println(newFileName + ".mp3");
 								File newFile = new File(folder, newFileName + ".mp3");
 								mp3File.renameTo(newFile);
