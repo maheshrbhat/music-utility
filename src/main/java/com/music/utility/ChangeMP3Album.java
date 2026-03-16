@@ -85,8 +85,9 @@ public class ChangeMP3Album {
 								name = name.replace(".mp3", "");
 								name = name.replace("(Official Video)", "");
 								name = name.replace("(Official Music Video)", "");
+								name = name.replaceAll("[^a-zA-Z0-9 ]", "");
 								String newFileName = name.split("\\[")[0];
-								newFileName = newFileName.trim().split(" ｜ ")[0];
+								newFileName = newFileName.trim().split("｜")[0];
 								System.out.println(newFileName + ".mp3");
 								File newFile = new File(folder, newFileName + ".mp3");
 								mp3File.renameTo(newFile);
