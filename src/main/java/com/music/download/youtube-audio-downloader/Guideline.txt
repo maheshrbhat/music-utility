@@ -1,0 +1,6 @@
+1. Put the urls to be downloaded in /bin/urls.txt
+2. Run the win-utility.bat
+
+3. If the mp3 file having chapters, then copy the content to chapters.txt in the format of START|END|TITLE
+4. Rename the file which needs to be splitted to fullsong.mp3
+5. Run the mp3-splitter.bat
